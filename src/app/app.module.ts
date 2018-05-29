@@ -7,6 +7,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { HttpModule } from '@angular/http';
+
+
+
+var config = {
+  apiKey: "AIzaSyAC4SHE6ndKEAkFaIfbdXtvTPzjHNNVpCU",
+  authDomain: "sesiones-e2824.firebaseapp.com",
+  databaseURL: "https://sesiones-e2824.firebaseio.com",
+  projectId: "sesiones-e2824",
+  storageBucket: "sesiones-e2824.appspot.com",
+  messagingSenderId: "773571315454"
+};
 
 
 
@@ -18,6 +32,10 @@ import { HomePage } from '../pages/home/home';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp),
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(config),
+    HttpModule
    
   ],
   bootstrap: [IonicApp],
