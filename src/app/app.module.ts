@@ -32,7 +32,6 @@ var config = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicModule.forRoot(MyApp),
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config),
     HttpModule
