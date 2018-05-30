@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      My App
+      Logins
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -27,6 +27,24 @@
         Iniciar Sesion</button>
     </ion-item>
 
+  </div>
+
+  <div>
+    <ion-list no-lines>
+      <ion-item>
+        <button ion-button full color="dark" (click)="loginFacebook()" round icon-left>
+          <ion-icon name="logo-facebook"></ion-icon>
+          Facebook</button>
+        <button ion-button full color="danger" (click)="loginGoogle()" round icon-left>
+          <ion-icon name="logo-google"></ion-icon>
+          Google </button>
+        <button ion-button full color="secondary" (click)="loginTwitter()" round icon-left>
+          <ion-icon name="logo-twitter"></ion-icon>
+          Twitter </button>
+        <button ion-button full (click)="logout()" round>Cerrar</button>
+
+      </ion-item>
+    </ion-list>
   </div>
 
 
