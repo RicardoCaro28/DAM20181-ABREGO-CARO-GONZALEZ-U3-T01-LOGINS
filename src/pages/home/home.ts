@@ -67,5 +67,18 @@ loginGoogle() {
     })
   }
 
+loginTwitter() {
+
+    this.fire.auth.signInWithRedirect(new firebase.auth.TwitterAuthProvider()).then(() => {
+      this.fire.auth.getRedirectResult().then(res => {
+        this.email = res.user.email;
+        this.nombre = res.user.displayName;
+        this.foto = res.user.photoURL;
+        this.navCtrl.push(PrincipalPage, { correo: this.email, name: this.nombre, photo: this.foto });
+      });
+
+    })
+  }
+
 
 }
