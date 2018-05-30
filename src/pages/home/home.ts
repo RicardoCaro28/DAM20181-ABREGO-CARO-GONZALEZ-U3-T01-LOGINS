@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ProveedorService } from "../../services/proveedor";
+import firebase from 'firebase';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { PrincipalPage } from "../principal/principal";
 
 
 @Component({
@@ -34,6 +37,20 @@ goDatos() {
       }
 
     }
+
+  }
+
+  loginFacebook() {
+
+    this.fire.auth.signInWithRedirect(new firebase.auth.FacebookAuthProvider()).then(() => {
+      this.fire.auth.getRedirectResult().then(res => {
+        this.email = res.user.email;
+        this.nombre = res.user.displayName;
+        this.foto = res.user.photoURL;
+        this.navCtrl.push(PrincipalPage, { correo: this.email, name: this.nombre, photo: this.foto });
+      });
+
+    })
 
   }
 
