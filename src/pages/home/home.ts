@@ -80,5 +80,9 @@ loginTwitter() {
     })
   }
 
+logout() {
+    this.fire.auth.signOut();
+  }
+
 
 }
