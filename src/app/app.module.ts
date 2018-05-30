@@ -6,11 +6,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PrincipalPage } from '../pages/principal/principal';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpModule } from '@angular/http';
 
+import { ProveedorService } from '../services/proveedor';
 
 
 var config = {
@@ -28,6 +30,7 @@ var config = {
   declarations: [
     MyApp,
     HomePage,
+    PrincipalPage
     ],
   imports: [
     BrowserModule,
@@ -41,10 +44,12 @@ var config = {
   entryComponents: [
     MyApp,
     HomePage,
+    PrincipalPage
     ],
   providers: [
     StatusBar,
     SplashScreen,
+    ProveedorService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
