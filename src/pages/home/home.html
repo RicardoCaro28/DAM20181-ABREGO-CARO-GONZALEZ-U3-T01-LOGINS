@@ -8,5 +8,26 @@
 
 <ion-content padding>
 
+<div>
+    <ion-item>
+      <img src="https://www.appdynamics.com/media/uploaded-images/1434071294/users.png" 
+      width="120" height="120" 
+      style="align-items: center">
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="user" [(ngModel)]="datax.user"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="password" [(ngModel)]="datax.pass"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button full (click)="goDatos()" round icon-left>
+        <ion-icon name="walk"></ion-icon>
+        Iniciar Sesion</button>
+    </ion-item>
+
+  </div>
+
 
 </ion-content>
